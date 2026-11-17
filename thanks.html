@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<title>Thank you | Working from the Heart</title>
+<title>Check your email | Working from the Heart</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="A short, guided release exploring how to soften the mind’s grip and make room for what’s already here. Live each week, with replay available.">
 <meta property="og:site_name" content="Tuesday Release | Working from the Heart">
@@ -157,6 +157,11 @@
     .label { font-size: 22px; }
     button { font-size: 18px; }
   }
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 24px 0; background: #1f4d5c; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .linkbtn { display: block; width: 100%; margin-top: 24px; min-height: 40px; padding: 0 20px; font: 600 22px/40px "Plus Jakarta Sans", sans-serif; color: #fff; background: var(--teal); border-radius: var(--pill-radius); text-decoration: none; }
+  .linkbtn:focus-visible { outline: 2px solid var(--teal-focus); outline-offset: 3px; }
+  @media (max-width: 520px) { .linkbtn { font-size: 18px; } }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMD4VX3XDJ"></script>
@@ -176,9 +181,17 @@
 <body>
 <main class="page">
   <div class="card">
-    <h1>Thank you</h1>
-    <p class="lede">Check your inbox.</p>
-    <p>This week's release is on its way.</p>
+    <h1>Check your email</h1>
+    <p class="lede">Confirm your subscription to finish.</p>
+
+    <div class="video">
+      <iframe src="https://player.vimeo.com/video/1247657504?app_id=122963" title="Threshold | Subscription Confirmation" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <p>Open the confirmation email and click the link. If it isn't in your inbox, look in spam or promotions.</p>
+    <p>In the meantime, this week's release is here.</p>
+    <a class="linkbtn" href="https://heartbeat.workingfromtheheart.com/posts/there-are-no-mistakes">Watch This Week's Release</a>
+    <p>Once you confirm, a new release arrives every Tuesday.</p>
   </div>
 </main>
 </body>
