@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Tuesday Release | Working from the Heart</title>
+<meta name="description" content="A short, guided release exploring how to soften the mind’s grip and make room for what’s already here. Live each week, with replay available.">
+<meta property="og:site_name" content="Tuesday Release | Working from the Heart">
+<meta property="og:title" content="Tuesday Release | Working from the Heart">
+<meta property="og:type" content="website">
+<meta property="og:description" content="A short, guided release exploring how to soften the mind’s grip and make room for what’s already here. Live each week, with replay available.">
+<meta property="og:image" content="https://release.workingfromtheheart.com/assets/images/card.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:url" content="https://release.workingfromtheheart.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans:wght@300;400;500;600;700" rel="stylesheet">
+<style>
+  :root {
+    --teal: #14b8a6;
+    --teal-focus: #1c7c7d;
+    --paper: #f9fbfc;
+    --card: #ffffff;
+    --ink: #333333;
+    --ink-soft: #555555;
+    --ink-deep: #1e293b;
+    --line: #b0bec5;
+    --card-radius: 48px;
+    --pill-radius: 32px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--paper); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--teal) 0%, var(--paper) 50%) fixed;
+  }
+  .page {
+    padding: 88px 16px 96px;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--card);
+    border-radius: var(--card-radius);
+    padding: 48px;
+    text-align: center;
+  }
+  h1 {
+    margin: 0 0 32px;
+    font-size: clamp(40px, 11vw, 60px);
+    font-weight: 600;
+    line-height: 1.125;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .label {
+    margin: 32px 0;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    color: var(--ink-deep);
+  }
+  .lede {
+    margin: 24px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.375;
+    color: var(--ink-soft);
+  }
+  p {
+    margin: 24px 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375;
+  }
+  .thumb {
+    font-size: 0;
+    color: transparent;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #1f4d5c;
+    object-fit: cover;
+  }
+  form { margin: 6px 0; }
+  input[type="email"] {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    font: 400 20px/54px "Plus Jakarta Sans", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--pill-radius);
+    outline: none;
+  }
+  input[type="email"]::placeholder { color: var(--ink); opacity: .55; }
+  input[type="email"]:focus, .consent input:focus + label::before {
+    border-color: var(--teal-focus);
+    box-shadow: 0 0 0 1px var(--teal-focus);
+  }
+  .consent {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .consent input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .consent label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.25;
+    cursor: pointer;
+  }
+  .consent label::before {
+    content: "";
+    flex: 0 0 42px;
+    height: 42px;
+    margin-right: 21px;
+    background: #fff center / 23px auto no-repeat;
+    border: 1px solid var(--line);
+    border-radius: var(--pill-radius);
+  }
+  .consent input:checked + label::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 648 552'%3E%3Cpath d='M225.3,517.7L2.1,293.1l68.1-67.7L226,382.3L578.1,35.6l67.4,68.4L225.3,517.7z' fill='%23333333'/%3E%3C/svg%3E");
+  }
+  .hp { position: absolute; left: -9999px; }
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    min-height: 40px;
+    padding: 0 20px;
+    font: 600 22px/40px "Plus Jakarta Sans", sans-serif;
+    color: #fff;
+    background: var(--teal);
+    border: 0;
+    border-radius: var(--pill-radius);
+    cursor: pointer;
+  }
+  button:focus-visible { outline: 2px solid var(--teal-focus); outline-offset: 3px; }
+  .status { margin: 16px 0 0; font-size: 16px; font-weight: 400; }
+  @media (max-width: 520px) {
+    .page { padding: 16px 12px 48px; }
+    .card { padding: 32px 24px; border-radius: 32px; }
+    .label { font-size: 22px; }
+    button { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="card">
+    <h1>There Are No Mistakes</h1>
+    <h2 class="label">This week's release</h2>
+    <h3 class="lede" style="font-weight:400;margin:24px 0">When a mistake or a problem feels like a disaster, this release makes room for the reaction and asks who is actually having it</h3>
+    <p>A short guided video release, every Tuesday. Nothing to fix and nothing to figure out.</p>
+
+    <img class="thumb" src="assets/images/release-thumb.jpg" alt="Video thumbnail for the release There Are No Mistakes, with Steven Carlson on a dark teal background">
+
+    <form id="optin" method="post" novalidate>
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <div class="consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">Yes — send me the weekly release and emails from Working from the Heart</label>
+      </div>
+      <input class="hp" type="text" name="www-url" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Send Me This Week's Release</button>
+      <div class="status" id="status" role="status"></div>
+    </form>
+
+    <p>No credit card, unsubscribe anytime</p>
+    <p>This page uses a basic analytics pixel. I run simple retargeting — nothing invasive. I might say hello again. Gently.</p>
+  </div>
+</main>
+<script>
+  // Set to the form-handler URL (e.g. SendFox form action) before publishing.
+  const ENDPOINT = "";
+  const img = document.querySelector('.thumb');
+  img.addEventListener('error', () => { img.removeAttribute('src'); });
+
+  const form = document.getElementById('optin');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.consent.checked || !form.email.checkValidity() || !form.email.value) {
+      status.textContent = 'Please enter your email and tick the box.';
+      return;
+    }
+    if (form['www-url'].value) return;
+    if (!ENDPOINT) { status.textContent = 'Form endpoint not connected yet.'; return; }
+    try {
+      const r = await fetch(ENDPOINT, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
+      form.innerHTML = '<p style="font-weight:500;margin:24px 0">Thank you. Check your inbox.</p>';
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please try again.';
+    }
+  });
+</script>
+</body>
+</html>
