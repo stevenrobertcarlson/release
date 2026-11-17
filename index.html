@@ -183,13 +183,14 @@
 
     <img class="thumb" src="assets/images/release-thumb.jpg" alt="Video thumbnail for the release There Are No Mistakes, with Steven Carlson on a dark teal background">
 
-    <form id="optin" method="post" novalidate>
+    <form id="optin" method="post" action="https://sendfox.com/form/3zp5j6/10xn9g" novalidate>
       <input type="email" name="email" placeholder="Email" required autocomplete="email">
       <div class="consent">
-        <input type="checkbox" id="consent" name="consent" required>
+        <input type="checkbox" id="consent" name="gdpr" value="1" required>
         <label for="consent">Yes — send me the weekly release and emails from Working from the Heart</label>
       </div>
-      <input class="hp" type="text" name="www-url" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input class="hp" type="text" name="a_password" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div id="rc"></div>
       <button type="submit">Send Me This Week's Release</button>
       <div class="status" id="status" role="status"></div>
     </form>
@@ -199,28 +200,33 @@
   </div>
 </main>
 <script>
-  // Set to the form-handler URL (e.g. SendFox form action) before publishing.
-  const ENDPOINT = "";
+  // Form posts to the SendFox "Tuesday Releases" form (list: Pulse). Invisible reCAPTCHA, as on SendFox's own form.
+  const RECAPTCHA_SITEKEY = "6Lemwu0UAAAAAJghn3RQZjwkYxnCTuYDCAcrJJ7S";
   const img = document.querySelector('.thumb');
   img.addEventListener('error', () => { img.removeAttribute('src'); });
 
   const form = document.getElementById('optin');
   const status = document.getElementById('status');
-  form.addEventListener('submit', async (e) => {
+  let widgetId = null;
+  function sfReady() {
+    widgetId = grecaptcha.render('rc', {
+      sitekey: RECAPTCHA_SITEKEY,
+      size: 'invisible',
+      callback: () => form.submit()
+    });
+  }
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.consent.checked || !form.email.checkValidity() || !form.email.value) {
+    if (!form.gdpr.checked || !form.email.checkValidity() || !form.email.value) {
       status.textContent = 'Please enter your email and tick the box.';
       return;
     }
-    if (form['www-url'].value) return;
-    if (!ENDPOINT) { status.textContent = 'Form endpoint not connected yet.'; return; }
-    try {
-      const r = await fetch(ENDPOINT, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
-      form.innerHTML = '<p style="font-weight:500;margin:24px 0">Thank you. Check your inbox.</p>';
-    } catch (err) {
-      status.textContent = 'Something went wrong. Please try again.';
-    }
+    if (form.a_password.value) return;
+    if (widgetId === null) { status.textContent = 'Still loading. Please try again in a moment.'; return; }
+    status.textContent = '';
+    grecaptcha.execute(widgetId);
   });
 </script>
+<script src="https://www.google.com/recaptcha/api.js?onload=sfReady&render=explicit" async defer></script>
 </body>
 </html>
